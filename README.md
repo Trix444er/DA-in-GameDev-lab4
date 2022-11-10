@@ -43,17 +43,43 @@
 - ![image](https://user-images.githubusercontent.com/114508818/201169182-4a2e8f07-eb86-4603-8cef-ac7e9ce485c7.png)
 
 - Добавляем в новый проект ML Agent
-- ![image](https://user-images.githubusercontent.com/114508818/201175494-b94ae840-3be8-4c09-8be8-c073a9c2d091.png)
+- ![image](https://user-images.githubusercontent.com/114508818/201176657-6998eae1-fce4-4c1a-8d17-8fb61fb62abc.png)
 
 - Пишем серию команд в Anaconda Prompt для создания и активации нового ML-агента и для скачивания необходимых библиотек:
 o mlagents 0.28.0;
 o torch 1.7.1;
-- ![image](https://user-images.githubusercontent.com/114508818/201176023-4b217fb7-9081-4c88-9d83-337d9e1bd612.png)
-![image](https://user-images.githubusercontent.com/114508818/201176205-94a4b597-4b0c-4c65-807a-e8f2fbc01b16.png)
-
-
-
-
+- ![image](https://user-images.githubusercontent.com/114508818/201176344-7c641b17-f341-4609-801e-5613b31221b2.png)
+- Создаём на сцене плоскость, куб и сферу
+- ![image](https://user-images.githubusercontent.com/114508818/201177889-89b0956b-edbf-4f47-af6e-95c504719926.png)
+- Создаём скрипт и пишем код, который мы получили из материалов к ЛР
+- ![image](https://user-images.githubusercontent.com/114508818/201178880-102c2176-3c0d-428b-bd20-63bcbc51a737.png)
+- Добавляем компоненты Decision Requester, Behavior Parameters для сферы
+- ![image](https://user-images.githubusercontent.com/114508818/201179081-a073da5e-0f49-4bf6-827c-5359e34d1c09.png)
+- Добавляем файл конфигурации нейронной сети
+behaviors:
+  RollerBall:
+    trainer_type: ppo
+    hyperparameters:
+      batch_size: 10
+      buffer_size: 100
+      learning_rate: 3.0e-4
+      beta: 5.0e-4
+      epsilon: 0.2
+      lambd: 0.99
+      num_epoch: 3
+      learning_rate_schedule: linear
+    network_settings:
+      normalize: false
+      hidden_units: 128
+      num_layers: 2
+    reward_signals:
+      extrinsic:
+        gamma: 0.99
+        strength: 1.0
+    max_steps: 500000
+    time_horizon: 64
+    summary_freq: 10000
+- Запускаем ML-агент, и сцену в Unity
 ## Выводы
 
 Абзац умных слов о том, что было сделано и что было узнано.
