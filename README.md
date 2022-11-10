@@ -54,35 +54,18 @@ o torch 1.7.1;
 - Создаём скрипт и пишем код, который мы получили из материалов к ЛР
 - ![image](https://user-images.githubusercontent.com/114508818/201178880-102c2176-3c0d-428b-bd20-63bcbc51a737.png)
 - Добавляем компоненты Decision Requester, Behavior Parameters для сферы
-- ![image](https://user-images.githubusercontent.com/114508818/201179081-a073da5e-0f49-4bf6-827c-5359e34d1c09.png)
+- ![image](https://user-images.githubusercontent.com/114508818/201180519-fbaef52c-0992-4c06-b0b9-632bc156d0bd.png)
 - Добавляем файл конфигурации нейронной сети
-behaviors:
-  RollerBall:
-    trainer_type: ppo
-    hyperparameters:
-      batch_size: 10
-      buffer_size: 100
-      learning_rate: 3.0e-4
-      beta: 5.0e-4
-      epsilon: 0.2
-      lambd: 0.99
-      num_epoch: 3
-      learning_rate_schedule: linear
-    network_settings:
-      normalize: false
-      hidden_units: 128
-      num_layers: 2
-    reward_signals:
-      extrinsic:
-        gamma: 0.99
-        strength: 1.0
-    max_steps: 500000
-    time_horizon: 64
-    summary_freq: 10000
+- ![image](https://user-images.githubusercontent.com/114508818/201180001-96bbb23b-d629-4457-9b1e-594167ca9d22.png)
 - Запускаем ML-агент, и сцену в Unity
+- Делаем 3, 9, 27 моделей: 
+- ![image](https://user-images.githubusercontent.com/114508818/201181577-ba670c04-822e-47d6-8cb5-75b0d8d5ceca.png)
+- ![image](https://user-images.githubusercontent.com/114508818/201181620-b41fb0c1-2cba-46fb-801a-a065a3deb313.png)
+- ![image](https://user-images.githubusercontent.com/114508818/201181786-13f5c29c-458b-4c3d-a47b-710c148048aa.png)
+В ходе выполнения программы куб появляется в разных местах в пределах плоскости, а шарик перемещается в сторону куба.
 ## Выводы
 
-Абзац умных слов о том, что было сделано и что было узнано.
+В ходе выполнения данной лабораторной работы я изучил ML Agent, с помощью которого научил программу "преследовать" кубик.
 
 | Plugin | README |
 | ------ | ------ |
