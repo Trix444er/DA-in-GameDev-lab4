@@ -48,6 +48,8 @@
 - Пишем серию команд в Anaconda Prompt для создания и активации нового ML-агента и для скачивания необходимых библиотек:
 o mlagents 0.28.0;
 o torch 1.7.1;
+- ![image](https://user-images.githubusercontent.com/114508818/201176023-4b217fb7-9081-4c88-9d83-337d9e1bd612.png)
+![image](https://user-images.githubusercontent.com/114508818/201176205-94a4b597-4b0c-4c65-807a-e8f2fbc01b16.png)
 
 
 
